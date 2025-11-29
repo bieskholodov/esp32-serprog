@@ -105,16 +105,14 @@ flashrom -p serprog:dev=/dev/ttyACM0:921600,spispeed=8M -c <chip> -w flash.bin
 *  PIN MOSI 23
 *  PIN CLK  19
 *  PIN CS   13
-
-```
-
+##
 * ESP32S2  
 *  PIN MISO 37
 *  PIN MOSI 35
 *  PIN CLK  36
 *  PIN CS   34
 
-```
+##
 
 * ESP32C2  
 *  PIN MISO 2
@@ -122,7 +120,7 @@ flashrom -p serprog:dev=/dev/ttyACM0:921600,spispeed=8M -c <chip> -w flash.bin
 *  PIN CLK  6
 *  PIN CS  10
 
-```
+##
 
 * ESP32S3  
 *  PIN MISO 5
