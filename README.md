@@ -102,5 +102,32 @@ flashrom -p serprog:dev=/dev/ttyACM0:921600,spispeed=8M -c <chip> -w flash.bin
 ```
 
 ## License
+#ifdef CONFIG_IDF_TARGET_ESP32
+    #define EEPROM_HOST  HSPI_HOST
+    #define PIN_NUM_MISO 18
+    #define PIN_NUM_MOSI 23
+    #define PIN_NUM_CLK  19
+    #define PIN_NUM_CS   13
+
+#elif defined CONFIG_IDF_TARGET_ESP32S2
+    #define EEPROM_HOST  SPI2_HOST
+    #define PIN_NUM_MISO 37
+    #define PIN_NUM_MOSI 35
+    #define PIN_NUM_CLK  36
+    #define PIN_NUM_CS   34
+
+#elif defined CONFIG_IDF_TARGET_ESP32C3 || CONFIG_IDF_TARGET_ESP32C2
+    #define EEPROM_HOST  SPI2_HOST
+    #define PIN_NUM_MISO 2
+    #define PIN_NUM_MOSI 7
+    #define PIN_NUM_CLK  6
+    #define PIN_NUM_CS   10
+
+#elif defined CONFIG_IDF_TARGET_ESP32S3
+    #define EEPROM_HOST  SPI2_HOST
+    #define PIN_NUM_MISO 5
+    #define PIN_NUM_MOSI 16
+    #define PIN_NUM_CLK  15
+    #define PIN_NUM_CS   4
 
 since i have borrowed snippets from the [pico-serprog](https://github.com/stacksmashing/pico-serprog) by [stacksmashing](https://github.com/stacksmashing), the least common denominator is GPL 3.0
