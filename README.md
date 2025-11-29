@@ -101,11 +101,11 @@ write from file
 flashrom -p serprog:dev=/dev/ttyACM0:921600,spispeed=8M -c <chip> -w flash.bin
 ```
 ##ifdef CONFIG_IDF_TARGET_ESP32
-    #define EEPROM_HOST  HSPI_HOST
-    #define PIN_NUM_MISO 18
-    #define PIN_NUM_MOSI 23
-    #define PIN_NUM_CLK  19
-    #define PIN_NUM_CS   13
+*    #define EEPROM_HOST  HSPI_HOST
+*    #define PIN_NUM_MISO 18
+*    #define PIN_NUM_MOSI 23
+*    #define PIN_NUM_CLK  19
+*    #define PIN_NUM_CS   13
 
 #elif defined CONFIG_IDF_TARGET_ESP32S2
     #define EEPROM_HOST  SPI2_HOST
