@@ -100,9 +100,7 @@ write from file
 ```
 flashrom -p serprog:dev=/dev/ttyACM0:921600,spispeed=8M -c <chip> -w flash.bin
 ```
-
-## License
-#ifdef CONFIG_IDF_TARGET_ESP32
+##ifdef CONFIG_IDF_TARGET_ESP32
     #define EEPROM_HOST  HSPI_HOST
     #define PIN_NUM_MISO 18
     #define PIN_NUM_MOSI 23
@@ -128,6 +126,9 @@ flashrom -p serprog:dev=/dev/ttyACM0:921600,spispeed=8M -c <chip> -w flash.bin
     #define PIN_NUM_MISO 5
     #define PIN_NUM_MOSI 16
     #define PIN_NUM_CLK  15
-    #define PIN_NUM_CS   4
+    #define PIN_NUM_CS   4#pin
+
+## License
+
 
 since i have borrowed snippets from the [pico-serprog](https://github.com/stacksmashing/pico-serprog) by [stacksmashing](https://github.com/stacksmashing), the least common denominator is GPL 3.0
